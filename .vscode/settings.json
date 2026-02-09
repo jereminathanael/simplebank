@@ -1,0 +1,4 @@
+{
+  "protobuf.protoc.path": "/opt/homebrew/bin/protoc",
+  "makefile.configureOnOpen": true
+}

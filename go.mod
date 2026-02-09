@@ -14,7 +14,12 @@ require (
 	go.uber.org/mock v0.6.0
 )
 
-require github.com/golang-jwt/jwt v3.2.2+incompatible
+require (
+	github.com/golang-jwt/jwt v3.2.2+incompatible
+	google.golang.org/grpc v1.78.0
+)
+
+require google.golang.org/genproto/googleapis/rpc v0.0.0-20251029180050-ab9386a59fda // indirect
 
 require (
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
@@ -63,6 +68,6 @@ require (
 	golang.org/x/net v0.48.0 // indirect
 	golang.org/x/sys v0.39.0 // indirect
 	golang.org/x/text v0.32.0 // indirect
-	google.golang.org/protobuf v1.36.11 // indirect
+	google.golang.org/protobuf v1.36.11
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
