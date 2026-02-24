@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.4
-// source: proto/rpc_create_user.proto
+// source: rpc_create_user.proto
 
 package pb
 
@@ -33,7 +33,7 @@ type CreateUserRequest struct {
 
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
-	mi := &file_proto_rpc_create_user_proto_msgTypes[0]
+	mi := &file_rpc_create_user_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +45,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_rpc_create_user_proto_msgTypes[0]
+	mi := &file_rpc_create_user_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_proto_rpc_create_user_proto_rawDescGZIP(), []int{0}
+	return file_rpc_create_user_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateUserRequest) GetUsername() string {
@@ -98,7 +98,7 @@ type CreateUserResponse struct {
 
 func (x *CreateUserResponse) Reset() {
 	*x = CreateUserResponse{}
-	mi := &file_proto_rpc_create_user_proto_msgTypes[1]
+	mi := &file_rpc_create_user_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -110,7 +110,7 @@ func (x *CreateUserResponse) String() string {
 func (*CreateUserResponse) ProtoMessage() {}
 
 func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_rpc_create_user_proto_msgTypes[1]
+	mi := &file_rpc_create_user_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserResponse) Descriptor() ([]byte, []int) {
-	return file_proto_rpc_create_user_proto_rawDescGZIP(), []int{1}
+	return file_rpc_create_user_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateUserResponse) GetUser() *User {
@@ -133,11 +133,12 @@ func (x *CreateUserResponse) GetUser() *User {
 	return nil
 }
 
-var File_proto_rpc_create_user_proto protoreflect.FileDescriptor
+var File_rpc_create_user_proto protoreflect.FileDescriptor
 
-const file_proto_rpc_create_user_proto_rawDesc = "" +
+const file_rpc_create_user_proto_rawDesc = "" +
 	"\n" +
-	"\x1bproto/rpc_create_user.proto\x12\x02pb\x1a\x10proto/user.proto\"~\n" +
+	"\x15rpc_create_user.proto\x12\x02pb\x1a\n" +
+	"user.proto\"~\n" +
 	"\x11CreateUserRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x1b\n" +
 	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
@@ -147,24 +148,24 @@ const file_proto_rpc_create_user_proto_rawDesc = "" +
 	"\x04user\x18\x01 \x01(\v2\b.pb.UserR\x04userB%Z#github.com/techschool/simplebank/pbb\x06proto3"
 
 var (
-	file_proto_rpc_create_user_proto_rawDescOnce sync.Once
-	file_proto_rpc_create_user_proto_rawDescData []byte
+	file_rpc_create_user_proto_rawDescOnce sync.Once
+	file_rpc_create_user_proto_rawDescData []byte
 )
 
-func file_proto_rpc_create_user_proto_rawDescGZIP() []byte {
-	file_proto_rpc_create_user_proto_rawDescOnce.Do(func() {
-		file_proto_rpc_create_user_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_rpc_create_user_proto_rawDesc), len(file_proto_rpc_create_user_proto_rawDesc)))
+func file_rpc_create_user_proto_rawDescGZIP() []byte {
+	file_rpc_create_user_proto_rawDescOnce.Do(func() {
+		file_rpc_create_user_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_rpc_create_user_proto_rawDesc), len(file_rpc_create_user_proto_rawDesc)))
 	})
-	return file_proto_rpc_create_user_proto_rawDescData
+	return file_rpc_create_user_proto_rawDescData
 }
 
-var file_proto_rpc_create_user_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_proto_rpc_create_user_proto_goTypes = []any{
+var file_rpc_create_user_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_rpc_create_user_proto_goTypes = []any{
 	(*CreateUserRequest)(nil),  // 0: pb.CreateUserRequest
 	(*CreateUserResponse)(nil), // 1: pb.CreateUserResponse
 	(*User)(nil),               // 2: pb.User
 }
-var file_proto_rpc_create_user_proto_depIdxs = []int32{
+var file_rpc_create_user_proto_depIdxs = []int32{
 	2, // 0: pb.CreateUserResponse.user:type_name -> pb.User
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
@@ -173,27 +174,27 @@ var file_proto_rpc_create_user_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_proto_rpc_create_user_proto_init() }
-func file_proto_rpc_create_user_proto_init() {
-	if File_proto_rpc_create_user_proto != nil {
+func init() { file_rpc_create_user_proto_init() }
+func file_rpc_create_user_proto_init() {
+	if File_rpc_create_user_proto != nil {
 		return
 	}
-	file_proto_user_proto_init()
+	file_user_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_rpc_create_user_proto_rawDesc), len(file_proto_rpc_create_user_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_rpc_create_user_proto_rawDesc), len(file_rpc_create_user_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_proto_rpc_create_user_proto_goTypes,
-		DependencyIndexes: file_proto_rpc_create_user_proto_depIdxs,
-		MessageInfos:      file_proto_rpc_create_user_proto_msgTypes,
+		GoTypes:           file_rpc_create_user_proto_goTypes,
+		DependencyIndexes: file_rpc_create_user_proto_depIdxs,
+		MessageInfos:      file_rpc_create_user_proto_msgTypes,
 	}.Build()
-	File_proto_rpc_create_user_proto = out.File
-	file_proto_rpc_create_user_proto_goTypes = nil
-	file_proto_rpc_create_user_proto_depIdxs = nil
+	File_rpc_create_user_proto = out.File
+	file_rpc_create_user_proto_goTypes = nil
+	file_rpc_create_user_proto_depIdxs = nil
 }
