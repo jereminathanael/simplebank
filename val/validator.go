@@ -7,7 +7,7 @@ import (
 
 var (
 	isValidUsername = regexp.MustCompile(`^[a-z0-9_]+$`).MatchString
-	isFullUsername = regexp.MustCompile(`^[a-zA-Z\s]+$`).MatchString
+	isFullUsername = regexp.MustCompile(`^[a-zA-Z ]+$`).MatchString
 )
 
 func ValidateString(value string, minLength int, maxLength int) error {
@@ -20,6 +20,9 @@ func ValidateString(value string, minLength int, maxLength int) error {
 }
 
 func ValidateUsername(value string) error {
+	fmt.Printf("DEBUG full_name bytes: %v\n", []byte(value))
+  fmt.Printf("DEBUG full_name string: '%s'\n", value)
+
 	if err := ValidateString(value, 3, 100); err != nil {
 		return err
 	}
