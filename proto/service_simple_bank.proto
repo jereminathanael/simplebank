@@ -5,6 +5,7 @@ package pb;
 import "rpc_create_user.proto";
 import "rpc_update_user.proto";
 import "rpc_login_user.proto";
+import "rpc_verify_email.proto";
 import "google/api/annotations.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 option go_package = "github.com/techschool/simplebank/pb";
@@ -29,10 +30,10 @@ service SimpleBank {
       post: "/v1/create_user"
       body: "*"
     };
-    // option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
-    //   description: "Use this API to create a new user"
-    //   summary: "Create new user"
-    // };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "Use this API to create a new user"
+      summary: "Create new user"
+    };
   };
 
   // UpdateUser updated user account
@@ -41,10 +42,10 @@ service SimpleBank {
       patch: "/v1/update_user"
       body: "*"
     };
-    // option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
-    //   description: "Use this API to update user"
-    //   summary: "Update user"
-    // };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "Use this API to update user"
+      summary: "Update user"
+    };
   };
   
   // LoginUser authenticates user credentials and returns access tokens.
@@ -53,9 +54,20 @@ service SimpleBank {
       post: "/v1/login_user"
       body: "*"
     };
-    // option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
-    //   description: "Use this API to login user"
-    //   summary: "Login user"
-    // };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "Use this API to login user"
+      summary: "Login user"
+    };
+  };
+
+  // VerifyEmail is verified user's email
+  rpc VerifyEmail (VerifyEmailRequest) returns (VerifyEmailResponse) {
+    option (google.api.http) = {
+      get: "/v1/verify_email"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      description: "Use this API to verify user's email address"
+      summary: "Verify email"
+    };
   };
 };
