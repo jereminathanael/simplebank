@@ -2,6 +2,7 @@ package val
 
 import (
 	"fmt"
+	"net/mail"
 	"regexp"
 )
 
@@ -53,9 +54,9 @@ func ValidateEmail(value string) error {
 		return err
 	}
 
-	// if _, err := mail.ParseAddress(value); err != nil {
-	// 	return fmt.Errorf("is not valid email address")
-	// }
+	if _, err := mail.ParseAddress(value); err != nil {
+		return fmt.Errorf("is not valid email address")
+	}
 
 
 	return nil

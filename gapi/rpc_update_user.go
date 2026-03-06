@@ -84,13 +84,13 @@ func validateUpdateUserRequest(req *pb.UpdateUserRequest) (violations []*errdeta
 	}
 
 	if req.FullName != nil { 
-		if err := val.ValidateFullname(req.GetUsername()); err != nil {
+		if err := val.ValidateFullname(req.GetFullName()); err != nil {
 			violations = append(violations, fieldViolation("full_name", err))
 		}
 	}
 
 	if req.Email != nil { 
-		if err := val.ValidateEmail(req.GetUsername()); err != nil {
+		if err := val.ValidateEmail(req.GetEmail()); err != nil {
 			violations = append(violations, fieldViolation("email", err))
 		}
 	}
