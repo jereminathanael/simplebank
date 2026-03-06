@@ -34,10 +34,15 @@ server:
 	go run main.go
 
 mock:
-	 mockgen \
+	mockgen \
   -source=db/sqlc/store.go \
   -destination=db/mock/store.go \
   -package=mockdb
+	mockgen \
+  -source=worker/distributor.go \
+  -destination=worker/mock/distributor.go \
+  -package=mockwk
+
 
 db_docs:
 	dbdocs build doc/db.dbml
