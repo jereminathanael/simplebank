@@ -20,13 +20,13 @@ INSERT INTO verify_emails (
 `
 
 type CreateVerifyEmailParams struct {
-	Username   string
-	Email      string
-	SecretCode string
+	Username   string `json:"username"`
+	Email      string `json:"email"`
+	SecretCode string `json:"secret_code"`
 }
 
 func (q *Queries) CreateVerifyEmail(ctx context.Context, arg CreateVerifyEmailParams) (VerifyEmail, error) {
-	row := q.db.QueryRowContext(ctx, createVerifyEmail, arg.Username, arg.Email, arg.SecretCode)
+	row := q.db.QueryRow(ctx, createVerifyEmail, arg.Username, arg.Email, arg.SecretCode)
 	var i VerifyEmail
 	err := row.Scan(
 		&i.ID,
@@ -53,12 +53,12 @@ RETURNING id, username, email, secret_code, is_used, created_at, expired_at
 `
 
 type UpdateVerifyEmailParams struct {
-	ID         int64
-	SecretCode string
+	ID         int64  `json:"id"`
+	SecretCode string `json:"secret_code"`
 }
 
 func (q *Queries) UpdateVerifyEmail(ctx context.Context, arg UpdateVerifyEmailParams) (VerifyEmail, error) {
-	row := q.db.QueryRowContext(ctx, updateVerifyEmail, arg.ID, arg.SecretCode)
+	row := q.db.QueryRow(ctx, updateVerifyEmail, arg.ID, arg.SecretCode)
 	var i VerifyEmail
 	err := row.Scan(
 		&i.ID,
