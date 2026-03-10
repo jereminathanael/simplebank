@@ -26,7 +26,9 @@ require (
 	github.com/hibiken/asynq v0.26.0
 	github.com/jackc/pgx/v5 v5.5.4
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
+	github.com/rs/cors v1.11.1
 	github.com/rs/zerolog v1.34.0
+	golang.org/x/sync v0.19.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20260209200024-4cfbd4190f57
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260209200024-4cfbd4190f57
 )
@@ -41,7 +43,6 @@ require (
 	github.com/redis/go-redis/v9 v9.18.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
-	golang.org/x/sync v0.19.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
 )
 
